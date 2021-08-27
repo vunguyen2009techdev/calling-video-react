@@ -2,7 +2,30 @@ import MediaDevice from './MediaDevice';
 import Emitter from './Emitter';
 import socket from './socket';
 
-const PC_CONFIG = { iceServers: [{ urls: ['stun:stun.l.google.com:19302'] }] };
+const PC_CONFIG = { iceServers: [
+  {
+    "url": "stun:global.stun.twilio.com:3478?transport=udp",
+    "urls": "stun:global.stun.twilio.com:3478?transport=udp"
+  },
+  {
+    "url": "turn:global.turn.twilio.com:3478?transport=udp",
+    "username": "f3539f2f5c39354577c2232313df138c8ce052fdda873dc71726deb3a97b5535",
+    "urls": "turn:global.turn.twilio.com:3478?transport=udp",
+    "credential": "c0muhK9W09AzerEsOwKaWqFdBXzPUajKNa4blP2tQi4="
+  },
+  {
+    "url": "turn:global.turn.twilio.com:3478?transport=tcp",
+    "username": "f3539f2f5c39354577c2232313df138c8ce052fdda873dc71726deb3a97b5535",
+    "urls": "turn:global.turn.twilio.com:3478?transport=tcp",
+    "credential": "c0muhK9W09AzerEsOwKaWqFdBXzPUajKNa4blP2tQi4="
+  },
+  {
+    "url": "turn:global.turn.twilio.com:443?transport=tcp",
+    "username": "f3539f2f5c39354577c2232313df138c8ce052fdda873dc71726deb3a97b5535",
+    "urls": "turn:global.turn.twilio.com:443?transport=tcp",
+    "credential": "c0muhK9W09AzerEsOwKaWqFdBXzPUajKNa4blP2tQi4="
+  }
+] };
 
 class PeerConnection extends Emitter {
   /**
